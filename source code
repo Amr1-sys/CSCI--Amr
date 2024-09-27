@@ -1,0 +1,12 @@
+#include <stdio.h>
+#define Coffee Beans 8
+#define WaterEC 30
+#define WaterM 39
+#define MilkE 0
+#define MilkC 70
+#define MilkM 160
+#define Chocalate syrup 30
+ int main()
+  {
+      
+  }
