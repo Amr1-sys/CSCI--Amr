@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+#define Beans in Espresso (grams) 8
+#define Water in Espresso (milliliters) 30
+#define ESPRESSO_PRICE 3.5
+
+#define Beans in Cappuccino (grams) 8
+#define Water in Cappuccino (milliliters) 30
+#define Milk in Cappuccino (milliliters) 70
+#define CAPPUCCINO_PRICE 4.5
+
+#define Beans in Mocha (grams) 8
+#define Water in Mocha (milliliters) 39
+#define Milk in Mocha (milliliters) 160
+#define Chocolate in Mocha (milliliters) 30
+#define MOCHA_PRICE 5.5
+
+#define ADMIN_PASSWORD "Admin1012"
+#define LOW_THRESHOLD 5
+ 
+float total_amount 
+int Coffee_Beans grams = 25;
+int Water_milliliters = 35;
+int Milk_milliliters = 45;
+int Choclate_milimeters = 50;
