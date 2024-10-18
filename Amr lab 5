@@ -1,0 +1,121 @@
+#include <stdio.h>
+
+#define Beans_Espresso  8
+#define Water_Espresso  30
+#define ESPRESSO_PRICE 3.5
+
+#define Beans_Cappuccino  8
+#define Water_Cappuccino  30
+#define Milk_Cappuccino  70
+#define CAPPUCCINO_PRICE 4.5
+
+#define Beans_Mocha  8
+#define Water_Mocha  39
+#define Milk_Mocha  160
+#define Chocolate_Mocha  30
+#define MOCHA_PRICE 5.5
+
+#define ADMIN_PASSWORD "Admin1012"
+#define LOW_THRESHOLD 5
+
+ int Coffee_selection;
+ int User_Choice;
+ int Admin_Choice;
+ 
+ 
+float total_amount;
+int Coffee_Beans  = 25;
+int Water_milliliters = 35;
+int Milk_milliliters = 45;
+int Choclate_milimeters = 50;
+
+void display_menu();
+void order_coffee();
+void admin_mode();
+void check_ingredients;
+void replenish_ingredients();
+void change_coffee_price();
+void display_ingredients();
+
+int main()
+{
+    switch (Choice) {
+    case 1: User Choice;
+    puts ("coffee 1: 4.5AED");
+    puts ("coffee 2: 3.5AED");
+    puts ("coffee 3: 5.5AED");
+    break;
+    case 2: Admin Choice;
+    break;
+    case 3: printf("Please exit the application./n");
+    break;
+    default:
+    printf ("Invalid input./n")
+    
+        IF Beans_Espresso < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Water_Espresso < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Beans_Cappuccino < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Water_Cappuccino < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Milk_Cappuccino < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Beans_Mocha < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Water_Mocha < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Milk_Mocha < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        IF Chocolate_Mocha < LOW_THRESHOLD {
+        printf ("The threshold of ingredients is not reached/n")
+        }
+        
+        if (Coffee_selection==1) {
+           While(1)
+           printf("User_Choice")
+           printf("Menu: ESPRESSO 3.5 AED,CAPPUCCINO 4.5 AED,MOCHA 5.5 AED")
+           scanf("%d", Menu);
+         
+        else if (Coffee_selection==2)
+               {
+               printf("admin_mode\n");       
+                  if (admin ADMIN_PASSWORD==Admin1012)
+                printif ("Welcome sir")
+                
+               }
+            else
+               printf(" you've inputted the positive value %d\n", i);
+          } // end of loop
+        } // end of main
+
+        
+        
+        void display_menu() {
+    printf("Coffee Machine Menu:\n");
+    printf("1. Order a coffee\n");
+    printf("2. Admin mode\n");
+    printf("3. Exit\n");
+}
+
+
+        
+    }
+        void admin_mode () {
+        int choice 
+        int password
+        If (ADMIN_PASSWORD==password)
+        printf ("Welcome")
+        
+        While(1)
+        printf ("Display the ingridents\n")
+        
