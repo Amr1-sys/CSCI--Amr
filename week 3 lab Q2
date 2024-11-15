@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+#define MAX_TRANSACTIONS 100
+
+int main() {
+    int transactions[] = {200, -150, -500, -400, -50, -200, 300};
+    int tobeprocessed[MAX_TRANSACTIONS];
+    int balance = 1000;
+    int count = 0;
+    int length;
+
+    // Corrected syntax for calculating the length
+    length = sizeof(transactions) / sizeof(transactions[0]);
+    
+    // Removed the semicolon after the for loop condition
+    for (int i = 0; i < length; i++) {
+        if (transactions[i] < 0 && balance + transactions[i] < 0) {
+            printf("Invalid transaction: %d\n", transactions[i]);
+            tobeprocessed[count++] = transactions[i];
+            continue;
+        }
+        balance = balance + transactions[i];
+        if (balance == 0) {
+            printf("Balance is zero, stopping further transactions.\n");
+            break;
+        }
+    }
+
+    printf("Final Balance: %d\n", balance);
+    printf("Unprocessed Transactions: ");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", tobeprocessed[i]);
+    }
+  
+    printf("\n");
+
+    return 0;
+}
