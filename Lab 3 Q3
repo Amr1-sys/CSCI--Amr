@@ -1,0 +1,143 @@
+[12:33 AM, 11/15/2024] Amr: #include <stdio.h>
+#include <string.h>
+
+#define NUM_TEAMS 10
+#define SQUAD_SIZE 20
+
+typedef struct {
+    char name[26];
+    int kitNumber;
+    char club[21];
+    struct {
+        int day;
+        int month;
+        int year;
+    } age;
+    char position[21];
+} player_t;
+
+typedef struct {
+    char name[21];
+    player_t players[SQUAD_SIZE];
+    int activeSize;
+} team_t;
+
+team_t teams[NUM_TEAMS];
+int teamCount = 0;
+
+void display_menu() {
+    printf("1. Enroll Club\n2. Add Player\n3. Search/Update Player\n4. Display Club Statistics\n5. Exit\n");
+}
+
+void enroll_club() {
+    if (teamCount >= NUM_TEAMS) {
+        printf("Cannot enroll more clubs.\n");
+        return;
+    }
+    printf("Enter club name: ");
+    scanf(" %[^\n]", teams[teamCount].name);
+    teams[team…
+[3:57 AM, 11/15/2024] Amr: #include <stdio.h>
+#include <string.h>
+
+#define NUM_TEAMS 10
+#define SQUAD_SIZE 20
+
+typedef struct {
+    char name[26], club[21], position[21];
+    int kitNumber, day, month, year;
+} player_t;
+
+typedef struct {
+    char name[21];
+    player_t players[SQUAD_SIZE];
+    int activeSize;
+} team_t;
+
+team_t teams[NUM_TEAMS];
+int teamCount = 0;
+
+void display_menu() {
+    printf("1. Enroll Club\n2. Add Player\n3. Search/Update Player\n4. Display Club Statistics\n5. Exit\n");
+}
+
+void enroll_club() {
+    if (teamCount < NUM_TEAMS) {
+        printf("Enter club name: ");
+        scanf(" %[^\n]", teams[teamCount++].name);
+        teams[teamCount - 1].activeSize = 0;
+        printf("Club enrolled successfully!\n");
+    } else {
+        printf("Cannot enroll more clubs.\n");
+    }
+}
+
+int find_team(const char *club_name) {
+    for (int i = 0; i < teamCount; i++)
+        if (strcmp(teams[i].name, club_name) == 0)
+            return i;
+    return -1;
+}
+
+void add_player() {
+    char club_name[21];
+    printf("Enter club name to add player: ");
+    scanf(" %[^\n]", club_name);
+
+    int teamIndex = find_team(club_name);
+    if (teamIndex == -1 || teams[teamIndex].activeSize >= SQUAD_SIZE) {
+        printf("Club not found or squad is full.\n");
+        return;
+    }
+
+    player_t *player = &teams[teamIndex].players[teams[teamIndex].activeSize++];
+    printf("Enter player name, kit number, birth date (dd mm yyyy), and position:\n");
+    scanf(" %[^\n] %d %d %d %d %[^\n]", player->name, &player->kitNumber, &player->day, &player->month, &player->year, player->position);
+    strcpy(player->club, club_name);
+    printf("Player added successfully!\n");
+}
+
+void search_update() {
+    char player_name[26];
+    printf("Enter player name to search: ");
+    scanf(" %[^\n]", player_name);
+
+    for (int i = 0; i < teamCount; i++) {
+        for (int j = 0; j < teams[i].activeSize; j++) {
+            if (strcmp(teams[i].players[j].name, player_name) == 0) {
+                printf("Player found in club %s: %s, Kit Number: %d, Age: %02d/%02d/%04d, Position: %s\n",
+                       teams[i].name, teams[i].players[j].name,
+                       teams[i].players[j].kitNumber,
+                       teams[i].players[j].day,
+                       teams[i].players[j].month,
+                       teams[i].players[j].year,
+                       teams[i].players[j].position);
+                return;
+            }
+        }
+    }
+    printf("Player not found.\n");
+}
+
+void display_club_statistics() {
+    for (int i = 0; i < teamCount; i++)
+        printf("Club: %s, Total Players: %d\n", teams[i].name, teams[i].activeSize);
+}
+
+int main() {
+    int choice;
+    do {
+        display_menu();
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1: enroll_club(); break;
+            case 2: add_player(); break;
+            case 3: search_update(); break;
+            case 4: display_club_statistics(); break;
+            case 5: printf("Exiting...\n"); break;
+            default: printf("Invalid choice.\n");
+        }
+    } while (choice != 5);
+    
+    return 0;
+}
